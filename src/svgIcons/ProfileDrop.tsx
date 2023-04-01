@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-const ProfileDrop = () => {
+const ProfileDrop: FC = () => {
   return (
     <svg
       width="8"

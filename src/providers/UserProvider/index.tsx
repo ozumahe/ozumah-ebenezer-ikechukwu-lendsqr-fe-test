@@ -7,16 +7,39 @@ type Props = {
   children: ReactNode;
 };
 
+type UserType = {
+  accountBalance: string;
+  accountNumber: string;
+  userName: string;
+  profile: {
+    avatar: string;
+    firstName: string;
+    lastName: string;
+  };
+};
+
 type InitialState = {
   allUsers: { loaded: boolean; data: [] };
-  singleUser: { loaded: false; data: {} };
+  singleUser: { loaded: false; data: UserType };
   getAllUsers: () => void;
   getSingleUser: (userId: string) => void;
 };
 
 const initialState: InitialState = {
   allUsers: { loaded: false, data: [] },
-  singleUser: { loaded: false, data: {} },
+  singleUser: {
+    loaded: false,
+    data: {
+      accountBalance: "0",
+      accountNumber: "",
+      userName: "",
+      profile: {
+        avatar: "",
+        firstName: "",
+        lastName: "",
+      },
+    },
+  },
 
   getAllUsers: () => {},
   getSingleUser: () => {},

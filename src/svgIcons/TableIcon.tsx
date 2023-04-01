@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-const TableIcon = () => {
+const TableIcon: FC = () => {
   return (
     <svg
       width="16"

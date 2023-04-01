@@ -32,3 +32,5 @@ export { default as View } from "./View";
 export { default as ActiveUser } from "./ActiveUser";
 export { default as BlacklistUser } from "./BlacklistUser";
 export { default as BackIcon } from "./BackIcon";
+export { default as Star } from "./Star";
+export { default as StarOutLine } from "./StarOutLine";

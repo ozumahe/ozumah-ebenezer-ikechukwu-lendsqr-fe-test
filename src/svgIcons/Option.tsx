@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Option = () => {
+const Option: FC = () => {
   return (
     <svg
       width="4"

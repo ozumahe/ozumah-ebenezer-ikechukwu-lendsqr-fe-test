@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import {
   ActiveUser,
   BlacklistUser,
@@ -12,8 +12,11 @@ import {
 import usersData from "../../../global/MOCK_DATA.json";
 import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import { UserContext } from "../../../providers/UserProvider";
 
 const Table: FC = () => {
+  const { allUsers, getAllUsers } = useContext(UserContext);
+
   const [tableData, setTableData] = useState<any>(usersData);
   const [filter, setFilter] = useState(false);
   const navigate = useNavigate();

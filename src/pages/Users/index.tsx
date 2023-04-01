@@ -12,7 +12,7 @@ import users from "../../global/MOCK_DATA.json";
 import { UserContext } from "../../providers/UserProvider";
 
 const Users: FC = () => {
-  const { getAllUsers } = useContext(UserContext);
+  const { allUsers, getAllUsers } = useContext(UserContext);
   const activeusers = users.filter((user) => user.status === "active");
   const userWithLoans = users.filter((user) => user.status === "inactive");
   const usersWithoutSavins = users.filter(

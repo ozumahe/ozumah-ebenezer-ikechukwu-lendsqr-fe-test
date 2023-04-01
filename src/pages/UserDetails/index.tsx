@@ -1,19 +1,15 @@
 import { FC, useContext, useEffect } from "react";
-import { BackIcon } from "../../svgIcons";
+import { BackIcon, Star, StarOutLine } from "../../svgIcons";
 
 import "./userdetails.scss";
 import { Link, useParams } from "react-router-dom";
-// import Ratings from "react-ratings";
 import Layout from "../../components/Layout";
 import users from "../../global/MOCK_DATA.json";
 import { UserContext } from "../../providers/UserProvider";
 
 const UserDetails: FC = () => {
   const { userId }: any = useParams();
-  const { getSingleUser } = useContext(UserContext);
-  const userDetails:
-    | { image: string; first_name: string; last_name: string }
-    | any = users.find((user) => user.id === Number(userId));
+  const { singleUser, getSingleUser } = useContext(UserContext);
 
   useEffect(() => {
     getSingleUser(userId);
@@ -38,22 +34,29 @@ const UserDetails: FC = () => {
 
         <div className="profile_container">
           <div className="profile">
-            <img src={userDetails.image} alt={userDetails.first_name} />
+            <img
+              src={singleUser.data.profile.avatar}
+              alt={singleUser.data.profile.firstName}
+            />
             <div className="profile1">
-              <p className="name">{`${userDetails.first_name} ${userDetails.last_name}`}</p>
-              <p className="id">LSQFf587g90</p>
+              <p className="name">{`${singleUser.data.profile.firstName} ${singleUser.data.profile.lastName}`}</p>
+              <p className="id">{singleUser.data.userName}</p>
             </div>
             <div className="line" />
             <div className="profile2">
               <p className="userstier">User’s Tier</p>
-              {/* <div>
-              <Ratings defaultRating={1} totalRating={3}  />
-            </div> */}
+              <div>
+                {Array(3)
+                  .fill("")
+                  .map((_, i) => (2 >= i + 1 ? <Star /> : <StarOutLine />))}
+              </div>
             </div>
             <div className="line" />
             <div className="profile3">
-              <p className="name">{userDetails.monthly_income}</p>
-              <p className="id">9912345678/Providus Bank</p>
+              <p className="name">${singleUser.data.accountBalance}</p>
+              <p className="id">
+                {singleUser.data.accountNumber}/Providus Bank
+              </p>
             </div>
           </div>
           <div className="navigation">

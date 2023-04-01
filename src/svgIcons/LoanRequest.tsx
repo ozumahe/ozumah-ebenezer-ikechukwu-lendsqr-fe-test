@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const LoanRequest = () => {
+const LoanRequest: FC = () => {
   return (
     <svg
       width="18"
