@@ -1,0 +1,265 @@
+.users {
+  .header {
+    font-size: 24px;
+    font-weight: 500;
+    color: #213f7d;
+  }
+  .users_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    width: 240px;
+    height: 160px;
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 20px 25px;
+
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #545f7d;
+      // margin: 0;
+    }
+
+    .total {
+      font-size: 24px;
+      font-weight: 600;
+      color: #213f7d;
+      margin: 0;
+    }
+  }
+  .table {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+
+    table {
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      padding: 20px;
+      width: 100%;
+      th {
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          p {
+            font-size: 12px;
+            font-weight: 600;
+            color: #545f7d;
+            text-transform: uppercase;
+            margin-right: 10px;
+          }
+        }
+      }
+      td {
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          color: #545f7d;
+        }
+      }
+      td {
+        button {
+          // background:rgb(57, 205, 98) ;
+          font-size: 14px;
+          font-weight: 500;
+          text-transform: capitalize;
+          border-radius: 100px;
+          padding: 5px 10px;
+          border: none;
+          outline: none;
+        }
+      }
+      tr:hover {
+        .table__options__container .table__options {
+          display: block;
+        }
+        .table__options__container:active .table__options {
+          display: block;
+        }
+      }
+    }
+
+    .controller {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      .left {
+        display: flex;
+        align-items: center;
+
+        .showing {
+          font-size: 14px;
+          font-weight: 400;
+          color: #545f7d;
+          text-transform: capitalize;
+        }
+
+        .select {
+          width: 80px;
+          height: 30px;
+          background: rgba(33, 63, 125, 0.1);
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          margin-right: 20px;
+          margin-left: 20px;
+          // padding-left: 5px;
+          // padding-right: 8px;
+
+          p {
+            font-size: 14px;
+            font-weight: 500;
+            color: #213f7d;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        .button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(33, 63, 125, 0.1);
+          border-radius: 4px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          margin-left: 5px;
+          margin-right: 5px;
+          width: 24px;
+          height: 24px;
+        }
+        .active {
+          color: #fff;
+          background: rgba(33, 63, 125, 1);
+        }
+        .numbers {
+          margin: 0;
+          padding: 5px;
+          border-radius: 4px;
+          font-size: 16px;
+          font-weight: 500;
+          color: #545f7d;
+          cursor: pointer;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .table__options__container {
+      position: relative;
+    }
+
+    .table__options {
+      position: absolute;
+      display: none;
+      right: 0;
+      width: 180px;
+      height: 130px;
+      background: #ffffff;
+      border: 1px solid rgba(84, 95, 125, 0.04);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      z-index: 1;
+
+      .table__option {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-left: 20px;
+        cursor: pointer;
+
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          color: #545f7d;
+          margin: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+    .filter {
+      position: absolute;
+      top: 60px;
+      width: 270px;
+      height: fit-content;
+      padding-top: 10px;
+      // padding-bottom: 10px;
+      background: #ffffff;
+      border: 1px solid rgba(84, 95, 125, 0.14);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+
+      .section {
+        width: fit-content;
+        margin: 0 auto;
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          color: #545f7d;
+        }
+        select,
+        input,
+        .date {
+          width: 230px;
+          height: 40px;
+          background: #ffffff;
+          border: 1px solid #213f7d;
+          border-radius: 8px;
+          color: #545f7d;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-weight: 400;
+        }
+        input {
+          padding-left: 10px;
+          color: #545f7d;
+          outline: none;
+        }
+        .date {
+          display: flex;
+        }
+        .buttons {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          // margin-top: 20px;
+          margin: 30px 0;
+
+          button {
+            width: 98px;
+            height: 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+          }
+          .button1 {
+            border: 1px solid #545f7d;
+            background: #fff;
+            color: #545f7d;
+          }
+          .button2 {
+            background: #39cdcc;
+            border: 1px solid #39cdcc;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
