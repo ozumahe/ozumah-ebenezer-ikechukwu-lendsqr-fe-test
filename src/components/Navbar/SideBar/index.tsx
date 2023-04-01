@@ -20,7 +20,7 @@ import {
   UserTimes,
 } from "../../../svgIcons";
 
-import "../../../styles/sidebar.scss";
+import "./sidebar.scss";
 import UserFriends from "../../../svgIcons/UserFriends";
 import Hand from "../../../svgIcons/Hand";
 import ChartBar from "../../../svgIcons/ChartBar";

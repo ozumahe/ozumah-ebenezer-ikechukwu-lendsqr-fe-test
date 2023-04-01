@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import Navbar from "../Navbar";
 import SideBar from "../Navbar/SideBar";
-import "../../styles/layout.scss";
+import "./layout.scss";
 
 type Props = {
   children: ReactNode;

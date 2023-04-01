@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useContext, useEffect } from "react";
 import { BackIcon } from "../../svgIcons";
 
 import "./userdetails.scss";
@@ -6,13 +6,18 @@ import { Link, useParams } from "react-router-dom";
 // import Ratings from "react-ratings";
 import Layout from "../../components/Layout";
 import users from "../../global/MOCK_DATA.json";
+import { UserContext } from "../../providers/UserProvider";
 
 const UserDetails: FC = () => {
-  const { userId } = useParams();
-
+  const { userId }: any = useParams();
+  const { getSingleUser } = useContext(UserContext);
   const userDetails:
     | { image: string; first_name: string; last_name: string }
     | any = users.find((user) => user.id === Number(userId));
+
+  useEffect(() => {
+    getSingleUser(userId);
+  }, []);
 
   return (
     <Layout>

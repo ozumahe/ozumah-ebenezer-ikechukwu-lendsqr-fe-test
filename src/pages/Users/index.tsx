@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useContext, useEffect } from "react";
 import Layout from "../../components/Layout";
 import { Card, Table } from "../../components/Users";
 import "./users.scss";
@@ -9,13 +9,19 @@ import {
   UserswithSavings,
 } from "../../svgIcons";
 import users from "../../global/MOCK_DATA.json";
+import { UserContext } from "../../providers/UserProvider";
 
 const Users: FC = () => {
+  const { getAllUsers } = useContext(UserContext);
   const activeusers = users.filter((user) => user.status === "active");
   const userWithLoans = users.filter((user) => user.status === "inactive");
   const usersWithoutSavins = users.filter(
     (user) => user.status === "blacklisted"
   );
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
   return (
     <Layout>

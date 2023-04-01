@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../../styles/navbar.scss";
+import "./navbar.scss";
 import { BellIcon, Logo, ProfileDrop, SearchIcon } from "../../svgIcons";
 
 const Navbar: FC = () => {

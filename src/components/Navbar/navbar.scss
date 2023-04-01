@@ -1,0 +1,82 @@
+.nav {
+  position: sticky;
+  top: 0;
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  .logo {
+    padding-left: 40px;
+    width: 283px;
+  }
+  .nav__search {
+    width: 400px;
+    height: 40px;
+    background: #ffffff;
+    // opacity: 0.2;
+    border: 1px solid #213f7d;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 20px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .nav__search__icon {
+      width: 56px;
+      height: 100%;
+      background: #39cdcc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    a {
+      font-size: 16px;
+      color: #213f7d;
+      font-weight: 400;
+    }
+
+    .container__right {
+      display: flex;
+      align-items: center;
+
+      .bell {
+        margin-left: 30px;
+        margin-right: 20px;
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .profile__avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          object-fit: cover;
+        }
+
+        .profile__name {
+          font-size: 16px;
+          font-weight: 500;
+          color: #213f7d;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
