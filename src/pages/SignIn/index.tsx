@@ -1,7 +1,8 @@
 import React, { FC, useState } from "react";
-import "../styles/signin.scss";
 import { useNavigate } from "react-router-dom";
 import { SignUpFormData } from "../../utils/types";
+
+import "./sign-in.scss";
 
 const SignIn: FC = () => {
   const navigate = useNavigate();
