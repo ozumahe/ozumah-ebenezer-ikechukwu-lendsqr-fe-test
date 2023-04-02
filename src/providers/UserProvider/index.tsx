@@ -10,16 +10,41 @@ type Props = {
 type UserType = {
   accountBalance: string;
   accountNumber: string;
+  email: string;
   userName: string;
+  education: {
+    duration: string;
+    employmentStatus: string;
+    level: string;
+    loanRepayment: string;
+    monthlyIncome: string[];
+    officeEmail: string;
+    sector: string;
+  };
   profile: {
     avatar: string;
+    bvn: string;
     firstName: string;
+    gender: string;
     lastName: string;
+    phoneNumber: string;
+  };
+  socials: {
+    facebook: string;
+    instagram: string;
+    twitter: string;
+  };
+  guarantor: {
+    address: string;
+    firstName: string;
+    gender: string;
+    lastName: string;
+    phoneNumber: string;
   };
 };
 
 type InitialState = {
-  allUsers: { loaded: boolean; data: [] };
+  allUsers: { loaded: boolean; data: UserType[] };
   singleUser: { loaded: false; data: UserType };
   getAllUsers: () => void;
   getSingleUser: (userId: string) => void;
@@ -32,11 +57,36 @@ const initialState: InitialState = {
     data: {
       accountBalance: "0",
       accountNumber: "",
+      email: "",
       userName: "",
+      education: {
+        duration: "",
+        employmentStatus: "",
+        level: "",
+        loanRepayment: "",
+        monthlyIncome: [],
+        officeEmail: "",
+        sector: "",
+      },
       profile: {
         avatar: "",
+        bvn: "",
         firstName: "",
+        gender: "",
         lastName: "",
+        phoneNumber: "",
+      },
+      socials: {
+        facebook: "",
+        instagram: "",
+        twitter: "",
+      },
+      guarantor: {
+        address: "",
+        firstName: "",
+        gender: "",
+        lastName: "",
+        phoneNumber: "",
       },
     },
   },

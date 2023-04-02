@@ -4,7 +4,6 @@ import { BackIcon, Star, StarOutLine } from "../../svgIcons";
 import "./userdetails.scss";
 import { Link, useParams } from "react-router-dom";
 import Layout from "../../components/Layout";
-import users from "../../global/MOCK_DATA.json";
 import { UserContext } from "../../providers/UserProvider";
 
 const UserDetails: FC = () => {
@@ -77,23 +76,25 @@ const UserDetails: FC = () => {
             <div className="row">
               <div>
                 <p className="title_name">full Name</p>
-                <p className="title">Grace Effiom</p>
+                <p className="title">{`${singleUser.data.profile.firstName} ${singleUser.data.profile.lastName}`}</p>
               </div>
               <div>
                 <p className="title_name">Phone Number</p>
-                <p className="title">07060780922</p>
+                <p className="title">{singleUser.data.profile.phoneNumber}</p>
               </div>
               <div>
                 <p className="title_name">Email Address</p>
-                <p className="title">grace@gmail.com</p>
+                <p className="title">{singleUser.data.email}</p>
               </div>
               <div>
                 <p className="title_name">Bvn</p>
-                <p className="title">07060780922</p>
+                <p className="title">{singleUser.data.profile.bvn}</p>
               </div>
               <div>
                 <p className="title_name">Gender</p>
-                <p className="title">Female</p>
+                <p className="title text-upper">
+                  {singleUser.data.profile.gender}
+                </p>
               </div>
             </div>
           </div>
@@ -104,31 +105,45 @@ const UserDetails: FC = () => {
             <div className="row">
               <div>
                 <p className="title_name">level of education</p>
-                <p className="title">B.Sc</p>
+                <p className="title">{singleUser.data.education.level}</p>
               </div>
               <div>
                 <p className="title_name">employment status</p>
-                <p className="title">Employed</p>
+                <p className="title">
+                  {singleUser.data.education.employmentStatus}
+                </p>
               </div>
               <div>
                 <p className="title_name">sector of employment</p>
-                <p className="title">FinTech</p>
+                <p className="title">{singleUser.data.education.sector}</p>
               </div>
               <div>
                 <p className="title_name">Duration of employment</p>
-                <p className="title">2 years</p>
+                <p className="title">{singleUser.data.education.duration}</p>
               </div>
               <div>
                 <p className="title_name">office email</p>
-                <p className="title">grace@lendsqr.com</p>
+                <p className="title">{singleUser.data.education.officeEmail}</p>
               </div>
               <div>
                 <p className="title_name">Monthly income</p>
-                <p className="title">₦200,000.00- ₦400,000.00</p>
+                {/* <p className="title">{₦200,000.00- ₦400,000.00}</p> */}
+                <p className="title">
+                  {singleUser.data.education.monthlyIncome.map((income, i) => (
+                    <span>
+                      {`₦${income}`}{" "}
+                      {i + 1 < singleUser.data.education.monthlyIncome.length
+                        ? "- "
+                        : ""}
+                    </span>
+                  ))}
+                </p>
               </div>
               <div>
                 <p className="title_name">loan repayment</p>
-                <p className="title">40,000</p>
+                <p className="title">
+                  {singleUser.data.education.loanRepayment}
+                </p>
               </div>
             </div>
           </div>
@@ -139,15 +154,15 @@ const UserDetails: FC = () => {
             <div className="row">
               <div>
                 <p className="title_name">Twitter</p>
-                <p className="title">@grace_effiom</p>
+                <p className="title">{singleUser.data.socials.twitter}</p>
               </div>
               <div>
                 <p className="title_name">Facebook</p>
-                <p className="title">Grace Effiom</p>
+                <p className="title">{singleUser.data.socials.facebook}</p>
               </div>
               <div>
                 <p className="title_name">Instagram</p>
-                <p className="title">@grace_effiom</p>
+                <p className="title">{singleUser.data.socials.instagram}</p>
               </div>
             </div>
           </div>
@@ -158,19 +173,21 @@ const UserDetails: FC = () => {
             <div className="row">
               <div>
                 <p className="title_name">full Name</p>
-                <p className="title">Debby Ogana</p>
+                <p className="title">{`${singleUser.data.guarantor.firstName} ${singleUser.data.guarantor.lastName}`}</p>
               </div>
               <div>
                 <p className="title_name">Phone Number</p>
-                <p className="title">07060780922</p>
+                <p className="title">{singleUser.data.guarantor.phoneNumber}</p>
               </div>
               <div>
-                <p className="title_name">Email Address</p>
-                <p className="title">debby@gmail.com</p>
+                <p className="title_name">Address</p>
+                <p className="title">{singleUser.data.guarantor.address}</p>
               </div>
               <div>
-                <p className="title_name">Relationship</p>
-                <p className="title">Sister</p>
+                <p className="title_name">Gender</p>
+                <p className="title text-upper">
+                  {singleUser.data.guarantor.gender}
+                </p>
               </div>
             </div>
           </div>
